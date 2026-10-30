@@ -1,0 +1,50 @@
+/* Apparence générale de la page */
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+/* Apparence du mode sombre */
+body.sombre {
+    background-color: #222;
+    color: white;
+}
+
+/* Apparence du bouton */
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style du menu */
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#menu li {
+    margin: 10px 0;
+}
+
+#menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Bouton du menu */
+#boutonMenu {
+    margin-top: 15px;
+}
+
+/* Cacher le menu sur les petits écrans */
+@media screen and (max-width: 768px) {
+    #menu {
+        display: none;
+    }
+
+    #menu.ouvert {
+        display: block;
+    }
+}

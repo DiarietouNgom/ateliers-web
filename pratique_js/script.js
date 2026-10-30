@@ -1,29 +1,44 @@
-let score = 0
+function afficherResultat(score, nombremotproposes) {
+console.log("votre score est de " + score + " sur " + nombremotproposes)
+}
 
-let choix = prompt("veuillez choissir la liste : mots ou phrases")
-while(choix !== "mots" && choix !== "phrases") {
-    choix = prompt("Veuillez choisir mots ou phrases");
+function choisirphraseouMots() {
+    let choix = prompt("veuillez choissir la liste : mots ou phrases")
+    while(choix !== "mots" && choix !== "phrases") {
+        choix = prompt("Veuillez choisir mots ou phrases");
+    } 
+   return choix   
 }
-    
 
-if (choix === "mots") {
-for (let i = 0; i < listeMots.length; i++) {
-    let motUtilisateur = prompt("Entrez le mot : " + listeMots[i])
-    if (motUtilisateur === listeMots[i]) {
-        score++
-    }    
+function LancerBoucleDeJeu(listeproposition) {
+    let score = 0
+    for (let i = 0; i < listeproposition.length; i++) {
+        motUtilisateur = prompt("Entrez la phrase : " + listeproposition[i])
+        if (motUtilisateur === listeproposition[1]) {
+            score++
+        }    
+    } 
+    return score
 }
-console.log("votre score est de " + score + " sur " + listeMots.length)
 
-} else {
-    for (let i = 0; i < listephrases.length; i++) {
-    let motUtilisateur = prompt("Entrez la phrase : " + listephrases[i])
-    if (motUtilisateur === listephrases[i]) {
-        score++
-    }    
-}
-console.log("votre score est de " + score + " sur " + listephrases.length)
-}
+function lancerjeu() {
+     let choix = choisirphraseouMots()
+     let score = 0   
+     let nombremotproposes = 0
+
+     if (choix === "mots") {
+        score = LancerBoucleDeJeu(listeMots)
+          nombremotproposes = listeMots.length
+     } else {
+        score = LancerBoucleDeJeu(listephrases)
+          nombremotproposes = listephrases.length
+     }
+
+    afficherResultat(score, nombremotproposes)
+
+} 
+
+lancerjeu()
 
 function retournerMessageScore(score, nombremotMax) {
     let message = "le score est de " + score + " sur " + nombremotMax
@@ -32,3 +47,4 @@ function retournerMessageScore(score, nombremotMax) {
 
 let retourfonction = retournerMessageScore(1, 3)
 console.log(retourfonction)
+
