@@ -1,4 +1,4 @@
-/* Apparence générale de la page */
+/* 1. Apparence générale de la page */
 body {
     background-color: white;
     color: black;
@@ -6,26 +6,37 @@ body {
     transition: 0.3s;
 }
 
-/* Apparence du mode sombre */
+/* 2. Apparence du mode sombre */
 body.sombre {
     background-color: #222;
     color: white;
 }
 
-/* Apparence du bouton */
+/* 3. Apparence des boutons */
 button {
     padding: 10px 20px;
     cursor: pointer;
 }
 
-/* Style du menu */
+/* 4. Navigation sur ordinateur */
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* 5. Style des liens du menu */
 #menu ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 #menu li {
-    margin: 10px 0;
+    margin: 0;
 }
 
 #menu a {
@@ -33,18 +44,33 @@ button {
     color: inherit;
 }
 
-/* Bouton du menu */
+/* 6. Cacher le bouton Menu sur ordinateur */
 #boutonMenu {
-    margin-top: 15px;
+    display: none;
 }
 
-/* Cacher le menu sur les petits écrans */
+/* 7. Adaptation aux téléphones */
 @media screen and (max-width: 768px) {
+
+    /* Afficher le bouton Menu */
+    #boutonMenu {
+        display: block;
+    }
+
+    /* Cacher les liens au départ */
     #menu {
         display: none;
     }
 
+    /* Afficher les liens après le clic */
     #menu.ouvert {
         display: block;
     }
+
+    /* Aligner les liens verticalement */
+    #menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
+
