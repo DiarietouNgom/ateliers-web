@@ -52,6 +52,10 @@ button {
 /* 7. Adaptation aux téléphones */
 @media screen and (max-width: 768px) {
 
+    .navigation {
+    flex-wrap: wrap;
+    }
+
     /* Afficher le bouton Menu */
     #boutonMenu {
         display: block;
@@ -65,12 +69,16 @@ button {
     /* Afficher les liens après le clic */
     #menu.ouvert {
         display: block;
+        flex-basis: 100%;
     }
 
     /* Aligner les liens verticalement */
     #menu ul {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 15px;
     }
 }
 
